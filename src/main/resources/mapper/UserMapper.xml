@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcy.springbootfastjson.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.xcy.springbootfastjson.model.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_age" jdbcType="INTEGER" property="userAge" />
+    <result column="user_address" jdbcType="VARCHAR" property="userAddress" />
+  </resultMap>
+
+  <select id="findUserById" parameterType="integer" resultType="com.xcy.springbootfastjson.model.User">
+    select * from user where id = #{id};
+  </select>
+</mapper>
